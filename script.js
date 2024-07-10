@@ -86,6 +86,7 @@ function move(){
         food = generateFood();
         increaseSpeed();
         clearInterval(gameInterval); // limpando intervalo
+        eatAudio();
         gameInterval =  setInterval(() => {
             move();
             checkColission();
@@ -194,4 +195,9 @@ function updateHighScore(){
         highScoreText.textContent = highScore.toString().padStart(3, '0')
     }
     highScoreText.style.display = 'block';
+}
+
+function eatAudio(){
+    var audio = document.getElementById('audio');
+    audio.play();
 }
